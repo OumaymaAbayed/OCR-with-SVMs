@@ -59,10 +59,13 @@ letter_classifier_rbf <- ksvm(letter ~ ., data = letters_train, kernel= "rbfdot"
 
 ## Technologies Used 💻
 R: The programming language used for implementing the model.
+
 kernlab: R package for Support Vector Machines.
+
 Google Colab: Online platform used for coding and sharing the project.
 
 
 ## Credit
 UCI ML: https://archive.ics.uci.edu/
+
 kaggle: https://www.kaggle.com/datasets/nishan192/letterrecognition-using-svm
