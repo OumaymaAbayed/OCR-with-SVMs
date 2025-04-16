@@ -21,41 +21,41 @@ Optical Character Recognition is a critical task in computer vision that involve
 - Evaluates model performance and accuracy.  
 - Implements kernel functions to improve classification accuracy.  
 
-This project uses R, so make sure you have R and RStudio installed. Use Google Colab for executing the code online.
 
 Install Required Packages:
 Install the necessary R packages in your environment:
 
-r
+```
 install.packages("kernlab")  
-Usage 📈
+```
 To run the OCR model, follow these steps:
 
-Load the dataset:
-
-r
-letters <- read.csv("letter-recognition.csv")  
+1. Load the dataset:
+```
+letters <- read.csv("letter-recognition.csv")
+```
 Train the SVM model:
-
-r
+```
 library(kernlab)  
-letter_classifier <- ksvm(letter ~ ., data = letters_train, kernel = "rbfdot")  
+letter_classifier <- ksvm(letter ~ ., data = letters_train, kernel = "rbfdot")
+```
 Make predictions and evaluate:
-
-r
+```
 letter_predictions <- predict(letter_classifier, letters_test)  
 table(letter_predictions, letters_test$letter)  
-
+```
 ## Model Evaluation 📊
-The model accuracy is determined by comparing predicted characters against the actual labels in the testing set. The final performance metrics include the overall accuracy and confusion matrix to understand misclassifications.
+The model accuracy is determined by comparing predicted characters against the actual labels in the testing set. 
+
+**Results:** The model has an accuracy of 83.93%.
 
 ## Improvements 📈
-To enhance the performance of the OCR system, consider the following:
+To enhance the performance of the OCR system, we applied the Gaussian RBF Kernel:
+```
+letter_classifier_rbf <- ksvm(letter ~ ., data = letters_train, kernel= "rbfdot")
+```
+**Results:** By modifying the kernel function, we improved the accuracy of our character recognition model from 84% to 93%. If this performance is still not sufficient for the OCR program, we could explore additional kernel options or adjust the cost of the constraints parameter C to change the width of the decision boundary.
 
-Explore additional feature engineering techniques.
-Implement cross-validation for more reliable evaluation.
-Experiment with different SVM kernel functions.
-Try alternative machine learning models or deep learning techniques such as CNNs.
 
 ## Technologies Used 💻
 R: The programming language used for implementing the model.
