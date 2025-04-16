@@ -4,7 +4,7 @@
 This project focuses on developing an Optical Character Recognition (OCR) system using Support Vector Machines (SVMs). The goal is to classify individual English alphabetic characters (A-Z) based on given features extracted from images.  
 
 ## Table of Contents 📑  
-1. [Introduction](#introduction)  
+1. [Introduction](##introduction)  
 2. [Features](#features) 
 3. [Model Evaluation](#model-evaluation)  
 4. [Improvements](#improvements)  
